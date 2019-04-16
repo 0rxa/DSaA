@@ -26,7 +26,7 @@ Selectors can only work with populated lists, so a condition to
 differentiate empty and non-empty lists is needed.
 
 The selector *first(list)* will return the element of the first
-element of the list (*assuming* or the element itself):
+element of the list:
 
 	first(MakeList(x,l)) = x
 
@@ -118,3 +118,32 @@ using constructors or selectors but to destructively change the existing stack.
 ## Queues
 Queues are the ideal data structure to model a FIFO buffer. Theoretically we
 add to the end of a queue and take away elements from its front.
+
+Queues are represented like lists but with an extra cell to keep track
+of the first and last elements. This allows changes to both ends of the queue
+with constant effort. A queue inserted as "0, 1, 2, 3" is accessed as:
+
+	0 -> 1 -> 2 -> 3 -> NULL
+
+#### Constructors
+* EmptyQueue - returns an empty queue
+* push(element, queue) - returns a queue identical to *queue* but with *element* at the beginning
+
+#### Selectors
+* top(queue) - returns the first element of *queue*
+* pop(queue) - reutrns *queue* removing the first element
+
+My implementation consisted of two data structures one for a linked list
+and one for the queue structure.
+
+	struct node{
+		int num;
+		struct node *next;
+	};
+	typedef struct node node;
+	
+	struct queue{
+		struct node* first;
+		struct node* last;
+	};
+	typedef struct queue queue;
