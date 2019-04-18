@@ -32,7 +32,7 @@ MakeListRight(int num, list* l)
 	list* tmp = malloc(sizeof(list));
 	tmp->num = num;
 	tmp->next = l;
-	if( l != NULL )
+	if( l != NULL && l->previous == NULL )
 	{
 		l->previous = tmp;
 	}
@@ -45,7 +45,7 @@ MakeListLeft(int num, list* l)
 	list* tmp = malloc(sizeof(list));
 	tmp->num = num;
 	tmp->previous = l;
-	if( l != NULL )
+	if( l != NULL && l->next == NULL )
 	{
 		l->next = tmp;
 	}
@@ -71,16 +71,12 @@ restRight(list* l)
 }
 
 list*
-print_f( list* l, int p )
+print_f( list* l )
 {
-	if( p )
-	{
-		printf("%d\n", l->num);
-	}
-
+	printf("%d\n", l->num);
 	if( l->next != NULL )
 	{
-		print_f(l->next, p);
+		print_f(l->next);
 	}
 	else
 	{
@@ -89,16 +85,12 @@ print_f( list* l, int p )
 }
 
 list*
-print_r( list* l, int p )
+print_r( list* l )
 {
-	if(p)
-	{
-		printf("%d\n", l->num);
-	}
-
+	printf("%d\n", l->num);
 	if( l->previous != NULL )
 	{
-		print_r(l->previous, p);
+		print_r(l->previous);
 	}
 	else
 	{
