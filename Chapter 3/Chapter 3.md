@@ -147,3 +147,25 @@ and one for the queue structure.
 		struct node* last;
 	};
 	typedef struct queue queue;
+
+
+## Doubly linked lists
+Doubly linked lists are almost identical to singly linked lists
+except that they also reference the previous element as opposed to just
+the next.
+
+Doubly linked lists are represented as three cells, pointing either to
+NULL or to the next and previous element. A doubly linked list inserted
+as "0, 1, 2, 3" is represented as:
+
+	NULL <- 0 <=> 1 <=> 2 <=> 3 -> NULL
+
+#### Constructors
+* EmptyList - returns an empty list
+* MakeListLeft(element, list) - adds *element* to the left of *list*
+* MakeListRight(element, list) - adds *element* to the right of *list*
+
+#### Selectors
+* first(list) - returns the first member of element *list*
+* restLeft(list) - returns the first element to the left of *list*
+* restRight(list) - returns the first element to the right of *list*
