@@ -3,14 +3,17 @@
 
 int main(int argc, char* argv[])
 {
-	//list* l = MakeListLeft(3, MakeListLeft(1, MakeListRight(5, MakeListRight(2, MakeListLeft(4, EmptyList())))));
+	list* l = MakeListLeft(3, EmptyList());
 
-	puts("TEST MakeListLeft");
-	list* l = MakeListLeft(1, MakeListLeft(2, MakeListLeft(3, EmptyList())));
-	print_f(print_r(l));
-	puts("");
+	l = MakeListLeft(2, l);
+	l = MakeListLeft(1, l);
+	l = MakeListLeft(0, l);
 
-	puts("TEST MakeListRight");
-	list* j = MakeListRight(1, MakeListRight(2, MakeListRight(3, EmptyList())));
-	print_r(print_f(j));
+	l=print_r(l);
+	l=MakeListRight(90, l);
+	l=MakeListRight(91, l);
+	l=MakeListRight(92, l);
+	l=MakeListRight(93, l);
+	//system("clear");
+	print_r(print_f(l));
 }
