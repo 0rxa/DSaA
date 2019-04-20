@@ -12,7 +12,7 @@ To construct a list on the abstract level two constructors are needed:
 
 Using this approach (called inductive), we can construct any list as such:
 	
-	MakeList(3, MakeList(1, MakeList(4, MakeList(2, MakeList(5, EmptyList())))));
+``MakeList(3, MakeList(1, MakeList(4, MakeList(2, MakeList(5, EmptyList())))));``
 
 The inductive approach must always start with a base case, in this case the EmptyList,
 and then builds up increasingly complex lists by repeatedly applying induction, in
@@ -28,12 +28,12 @@ differentiate empty and non-empty lists is needed.
 The selector *first(list)* will return the element of the first
 element of the list:
 
-	first(MakeList(x,l)) = x
+``first(MakeList(x,l)) = x``
 
 The selector *rest(list)* will return the pointer to the next element of
 the list:
 	
-	rest(MakeList(x,l)) = l
+``rest(MakeList(x,l)) = l``
 
 
 #### Mutators
@@ -97,7 +97,7 @@ representation of stacks and linked lists is the same but special care is
 needed on the order of items. For example a LIFO buffer inserted as
 "0, 1, 2, 3" is represented as 
 
-	3 -> 2 -> 1 -> 0 -> NULL
+``3 -> 2 -> 1 -> 0 -> NULL``
 
 Although very similar, stacks primitive operators are named
 differently from linked lists.
@@ -123,7 +123,7 @@ Queues are represented like lists but with an extra cell to keep track
 of the first and last elements. This allows changes to both ends of the queue
 with constant effort. A queue inserted as "0, 1, 2, 3" is accessed as:
 
-	0 -> 1 -> 2 -> 3 -> NULL
+``0 -> 1 -> 2 -> 3 -> NULL``
 
 #### Constructors
 * EmptyQueue - returns an empty queue
@@ -158,7 +158,7 @@ Doubly linked lists are represented as three cells, pointing either to
 NULL or to the next and previous element. A doubly linked list inserted
 as "0, 1, 2, 3" is represented as:
 
-	NULL <- 0 <=> 1 <=> 2 <=> 3 -> NULL
+``NULL <- 0 <=> 1 <=> 2 <=> 3 -> NULL``
 
 #### Constructors
 * EmptyList - returns an empty list
