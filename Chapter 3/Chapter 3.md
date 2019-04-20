@@ -60,32 +60,35 @@ have an empty list. This procedure calls itself for every element
 in the list, so if there are more elements, the procedure will take
 more time to complete. Here is my implementation in C:
 
-	if( isEmpty(head) )
-	{
-		fprintf(stderr, "List is empty\n");
-	}
-	else if ( isEmpty(rest(head)) )
-	{
-		return head->next;
-	}
-	else
-	{
-		last(rest(head));
-	}
-
+```c
+if( isEmpty(head) )
+{
+	fprintf(stderr, "List is empty\n");
+}
+else if ( isEmpty(rest(head)) )
+{
+	return head->next;
+}
+else
+{
+	last(rest(head));
+}
+```
 
 In order to append a new list to an existing, we also need to use recursion.
 This is done by repeatedly taking the first remaining item of l1 and ading it to the front 
 of the remainder appended to l2. My implementation in C:
 
-	if(isEmpty(l1))
-	{
-		return l2;
-	}
-	else
-	{
-		return MakeList(first(l1), append(rest(l1), l2));
-	}
+```c
+if(isEmpty(l1))
+{
+	return l2;
+}
+else
+{
+	return MakeList(first(l1), append(rest(l1), l2));
+}
+```
 
 The time complexity of this procedure is proportional to the length of first list
 since we invoke the procedure as long as there are elements in it.
@@ -136,18 +139,19 @@ with constant effort. A queue inserted as "0, 1, 2, 3" is accessed as:
 My implementation consisted of two data structures one for a linked list
 and one for the queue structure.
 
-	struct node{
-		int num;
-		struct node *next;
-	};
-	typedef struct node node;
-	
-	struct queue{
-		struct node* first;
-		struct node* last;
-	};
-	typedef struct queue queue;
+```c
+struct node{
+	int num;
+	struct node *next;
+};
+typedef struct node node;
 
+struct queue{
+	struct node* first;
+	struct node* last;
+};
+typedef struct queue queue;
+```
 
 ## Doubly linked lists
 Doubly linked lists are almost identical to singly linked lists
