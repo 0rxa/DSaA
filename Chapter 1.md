@@ -4,9 +4,9 @@
 
 Three questions necessary to write an algorithm:
 
-	1. What is it supposed to do? (Specification)
-	2. Does it really do it? (Verification)
-	3. How well does it do it? (Performance analysis)
+1. What is it supposed to do? (Specification)
+2. Does it really do it? (Verification)
+3. How well does it do it? (Performance analysis)
 
 
 The *specification* should formalize the crucial details of the problem that the algorithm is intended to solve. There is no general requirement that the specification is complete or non-ambiguous.
