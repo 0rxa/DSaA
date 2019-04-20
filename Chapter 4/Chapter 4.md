@@ -42,6 +42,7 @@ Linear search goes through each element of the array starting
 from one end and if the required value is found, it returns
 the index otherwise it returns -1 (by convention). My implementation:
 
+```c
 	int
 	find(int* arr, int s, int x)
 	{
@@ -49,6 +50,7 @@ the index otherwise it returns -1 (by convention). My implementation:
 			if( x == arr[c] ) return c;
 		return -1;
 	}
+```
 
 ## Binary Search
 An improvement over linear search is binary search. The data can 
