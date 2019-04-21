@@ -1,0 +1,6 @@
+digraph G {
+	root -> {"0lu", "0ru", "0rl", "0ll"}
+	"0ll" -> {"1lu", "1ru", "1rl", "1ll"}
+	"1ru" -> {"2lu", "2ru", "2rl", "2ll"}
+	"2ll" -> {"3lu", "3ru", "3rl", "3ll"}
+}
