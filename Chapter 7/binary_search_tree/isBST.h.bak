@@ -1,0 +1,45 @@
+int
+isBST(node* t)
+{
+	if( isEmpty(t) )
+	{
+		return 1;
+	}
+	else if( !isEmpty(left(t)) && !isEmpty(right(t)) )
+	{
+		if( root(t) > root(left(t)) && root(t) < root(right(t)))
+		{
+			return (isBST(left(t)) && isBST(right(t)));
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	else if( !isEmpty(left(t)) )
+	{
+		if( root(t) > root(left(t)) )
+		{
+			return isBST(left(t));
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	else if( !isEmpty(right(t)) )
+	{
+		if( root(t) < root(right(t)) )
+		{
+			return isBST(right(t));
+		}
+		{
+			return 0;
+		}
+	}
+	else
+	{
+		return 1;
+	}
+
+}
